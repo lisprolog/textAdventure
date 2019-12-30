@@ -7,8 +7,10 @@ public class Guitar extends GameObject{
     }
 
     String [] text = {"The guitar is dusty. It seems to be a cheap western guitar with metal strings attached.", };
-    String [] commands = {"lift", "play", };
-    String [] answers = {"A spider runs away as you lift the guitar", "A String is missing, you cannot play the guitar"};
+    String [] commands = {"lift", "play", "done" };
+    String [] answers = {"A spider runs away as you lift the guitar.",
+			 "A String is missing, you cannot play the guitar.",
+			 "You move back."};
 
     HashMap<String, String> map1 = new HashMap<String, String>();
     

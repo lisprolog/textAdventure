@@ -7,8 +7,13 @@ public class Bookshelf extends GameObject{
     }
 
     String [] text = {"It's a overloaded bookshelf. There are 10 books, 5 directories, 7 rubic cubes, paper, pencils and notes"};
-    String [] commands = {"checkbook", "checkfolder", "takepaper", "takepencil", "notes"};
-    String [] answers = {"It's a book an neuroses", "The folder is empty", "You have taken the paper.", "You have taken the pencil.", "The notes mention someting about feeding the neighbours dog."};
+    String [] commands = {"checkbook", "checkfolder", "takepaper", "takepencil", "notes", "done"};
+    String [] answers = {"It's a book an neuroses",
+			 "The folder is empty",
+			 "You have taken the paper.",
+			 "You have taken the pencil.",
+			 "The notes mention someting about feeding the neighbours dog.",
+			 "You move back."};
 
     public void toString2(){
 	System.out.println("\033[34m" + text[0] + "\033[0m");

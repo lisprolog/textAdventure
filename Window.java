@@ -8,8 +8,11 @@ public class Window extends GameObject{
 
     String [] text = {"The curtains are close-drawn. You cannot see."};
 
-    String [] commands = {"curtains", "openwindow", "closewindow"};
-    String [] answers = {"The windows are closed. As you open them, a pigeon flies away scared. You can see the neighbors at a private moment.", "The window opens and the muggy air flows out.", "The windows are closed now."};
+    String [] commands = {"curtains", "openwindow", "closewindow", "done"};
+    String [] answers = {"The windows are closed. As you open them, a pigeon flies away scared. You can see the neighbors having an argument.",
+			 "The window opens and the muggy air flows out.",
+			 "The windows are closed now.",
+			 "done."};
 
     HashMap<String, String> map1 = new HashMap<String, String>();
     

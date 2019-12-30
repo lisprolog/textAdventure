@@ -6,8 +6,12 @@ public class Door extends GameObject{
     }
 
     String [] text = {"the door is closed and has a door spy"};
-    String [] commands = {"open", "spy", "punch", "kick"};
-    String [] answers = {"You can not open the door. It's locked.", "You look out and see somebody running away.", "You punch at the door. Nothing happens.", "You kick at the door. Nothing happens."};
+    String [] commands = {"open", "spy", "punch", "kick", "done"};
+    String [] answers = {"You can not open the door. It's locked.",
+			 "You look out and see somebody running away.",
+			 "You punch at the door. Your knuckles hurt.",
+			 "You kick at the door. Nothing happens.",
+			 "You move back."};
 
 
     HashMap<String, String> map1 = new HashMap<String, String>();

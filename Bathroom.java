@@ -9,8 +9,8 @@ public class Bathroom extends GameObject{
     }
 
     String [] text = {"the bathroom is tiny. There is a sink for brushing teeth and one for taking a shower. There is cologne, a toothbrush, a hygrometer, a soap, a towel."};
-    String [] commands = {"cologne", "toothbrush", "hygro", "soap", "towel", "shower"};
-    String [] answers = {"You put on some cologne. It smells nice. Like a boss!", "A used toothbrush. Useless to you.", "the hygrometer says 92% Humidity.", "You use the soap. Your hands are clean now.", "You take the towel.", "You take a shower. You realise that the floor became wet for some weird reason."};
+    String [] commands = {"cologne", "toothbrush", "hygro", "soap", "towel", "shower", "done"};
+    String [] answers = {"You put on some cologne. It smells nice. Like a boss!", "A used toothbrush. Useless to you.", "the hygrometer says 92% Humidity.", "You use the soap. Your hands are clean now.", "You take the towel.", "You take a shower. You realise that the floor became wet for some weird reason.", "You move back."};
 
 
     public void setHygro(){

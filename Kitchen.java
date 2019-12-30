@@ -8,12 +8,13 @@ public class Kitchen extends GameObject{
 	initializeHashMap();
     }
 
-    String [] text = {"There is a shelf, a fridge, a pot, and a jar"};
-    String [] commands = {"openshelf", "openfridge", "openpot", "smelljar"};
+    String [] text = {"There is a shelf, a fridge, a pot, and a cup"};
+    String [] commands = {"openshelf", "openfridge", "openpot", "smellcup", "done"};
     String [] answers = {"There is a muffin in the shelf.",
 			 "There are mushrooms inside the fridge",
 			 "There are noodles inside the pot.",
-			 "There is coffee in the jar"};
+			 "There is coffee in the cup.",
+			 "You move back."};
     
     public void toString2(){
 	System.out.println("\033[34m" + text[0] + "\033[0m");

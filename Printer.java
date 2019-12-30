@@ -8,9 +8,14 @@ public class Printer extends GameObject{
 	initializeHashMap();
     }
 
-    String [] text = {"The printer is dusty.", "A cartridge is missing", "There is no connection between the printer and the computer", "Paper is missing"};
-    String [] commands = {"turnon", "turnoff", "plugcable", "plugcartridge", "placepaper"};
-    String [] answers = {"Nothing happens", "Nothing happens", "You plug in the cable.", "You put the cartridge inside the printer.", "You place paper into the printer."};
+    String [] text = {"The printer is dusty."};
+    String [] commands = {"turnon", "turnoff", "plugcable", "plugcartridge", "placepaper", "done"};
+    String [] answers = {"Silence.",
+			 "Nothing happens.",
+			 "You plug in the cable.",
+			 "You put the cartridge inside the printer.",
+			 "You place paper into the printer.",
+			 "You move back."};
     
     public void toString2(){
 	System.out.println("\033[34m" + text[0] + "\033[0m");
