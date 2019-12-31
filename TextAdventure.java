@@ -11,6 +11,7 @@ public class TextAdventure{
 	Scanner sc = new Scanner(System.in);
 	boolean run = true;
 	boolean run2 = true;
+	int status = 0;
 	
 	String command = "";
 
@@ -71,7 +72,7 @@ public class TextAdventure{
 			}else{
 			    System.out.println("################################################################################################################################################################################################");
 			    try{
-				o1.checkMap(command);
+				status = o1.checkMap(command);
 			    }catch(NullPointerException e){
 				o1.checkMap(command);
 				System.out.println("Error!");
