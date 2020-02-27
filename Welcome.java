@@ -1,7 +1,6 @@
 public class Welcome extends GameObject{
 
     public Welcome(){
-
     }
 
     String [] text = {
@@ -10,14 +9,18 @@ public class Welcome extends GameObject{
 
     String [] commands = { "bed", "tv", "table", "kitchen", "bathroom", "window", "guitar", "printer", "bookshelf", "door", "closet", "quit"};
 
-    public void toString2(){
+    public String toString2(){
 	System.out.println(text[0]);
+	return text[0];
     }
 
-    public void toStringC(){
+    public String toStringC(){
+	String result = "";
 	for(int i = 0; i < commands.length; i++){
 	    System.out.println(commands[i]);
+	    result += commands[i] + "\n";
 	}
+	return result;
     }
 }
 

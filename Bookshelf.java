@@ -6,33 +6,52 @@ public class Bookshelf extends GameObject{
 	initializeHashMap();
     }
 
-    String [] text = {"It's a overloaded bookshelf. There are 10 books, 5 directories, 7 rubic cubes, paper, pencils and notes"};
-    String [] commands = {"checkbook", "checkfolder", "takepaper", "takepencil", "notes", "done"};
-    String [] answers = {"It's a book an neuroses",
-			 "The folder is empty",
-			 "You have taken the paper.",
-			 "You have taken the pencil.",
+    String [] text = {"It's a overloaded bookshelf. There are 5 books, directories, 7 rubic cubes, pencils and notes."};
+    String [] commands = {"checkbook1","checkbook2","checkbook3","checkbook4","checkbook5", "checkdirectory", "guitarstrings", "notes", "done", "takepaper"};
+    String [] answers = {"It says <I am Legend> by Richard Matheson.",
+			 "It says <1984> by George Orwell.",
+			 "It says <Faust> by Johann Wolfgang von Goethe.",
+			 "It says <Do Androids Dream of Electric Sheep?> by Phillip K. Dick.",
+			 "It says <Alice in Wonderland> by Lewis Carroll.",
+			 "There is blank paper in the directory.",
+			 "You have taken the guitar strings.",
 			 "The notes mention someting about feeding the neighbours dog.",
-			 "You move back."};
+			 "You move back.",
+			 "You have taken the paper."};
 
-    public void toString2(){
-	System.out.println("\033[34m" + text[0] + "\033[0m");
-    }
-
-    public void toStringC(){
-	for(int i = 0; i < text.length; i++){
-	    System.out.println(commands[i]);
-	}	
-    }
+    private int update = commands.length - 1;
     
+    public String toString2(){
+	String result = "\033[34m" + text[0] + "\033[0";
+    	System.out.println("\033[34m" + text[0] + "\033[0m");
+	return result;
+    }
+
+    public String toStringC(){
+	String result = "";
+    	for(int i = 0; i < update; i++){
+	    System.out.println(commands[i]);
+	    result += commands[i]+"\n";
+	}
+	return result;
+    }
+
+    public String checkMap(String command){
+	String result = "";
+	System.out.println("\033[31;1m" + map1.get(command) + "\033[0m");
+	result = "\033[31;1m" + map1.get(command) + "\033[0m";
+	if(command.equals("checkdirectory")){
+	    update++;
+	}
+	if(command.equals("guitarstrings")){
+	    status[4] = true;
+	}
+	return result;
+    }
+
     public void initializeHashMap(){
 	for(int i = 0; i < commands.length; i++){
 	    map1.put(commands[i], answers[i]);
 	}
     }
-
-    public void checkMap(String command){
-	System.out.println("\033[31;1m" + map1.get(command) + "\033[0m");
-    }
-    
 }

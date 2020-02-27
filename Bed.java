@@ -15,28 +15,37 @@ public class Bed extends GameObject{
 			 "You open the bed. It is filled with toys and old newspapers.",
 			 "As you move towards the floor, you hear cracking noises. Under the bed are lots of spider webs and you see a cable at the back.",
 			 "You move back.",
-			 "You look under the bed, close your eyes, grab into the spiderwebs and grab the plug cable."};
+			 "You look under the bed, close your eyes, grab into the spider webs and grab the plug cable."};
 		 
 
     HashMap<String, String> map1 = new HashMap<String, String>();
     
-    public void toString2(){
-	System.out.println("\033[34m" + text[0] + "\033[0m");
+    public String toString2(){
+	String result = "\033[34m" + text[0] + "\033[0";
+    	System.out.println("\033[34m" + text[0] + "\033[0m");
+	return result;
     }
 
-    public void toStringC(){
-	for(int i = 0; i < update; i++){
+    public String toStringC(){
+	String result = "";
+    	for(int i = 0; i < update; i++){
 	    System.out.println(commands[i]);
+	    result += commands[i]+"\n";
 	}
+	return result;
     }
 
-    public int checkMap(String command){
+    public String checkMap(String command){
+	String result = "";
 	System.out.println("\033[31;1m" + map1.get(command) + "\033[0m");
+	result = "\033[31;1m" + map1.get(command) + "\033[0m";
 	if(command.equals("lookunder")){
 	    update = 6;
-	    return 1;
 	}
-	return 0;
+	if(command.equals("grabcable")){
+	    setStatus(1, true);
+	}
+	return result;
     }
 
     public void initializeHashMap(){

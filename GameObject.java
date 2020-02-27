@@ -11,27 +11,46 @@ public class GameObject{
     String[] commands;
 
     String[] answers;
+
+    static boolean[] status = {false, false, false, false, false, false, false, false, false, false};
+	
+    /*
+      0
+      1 grabcable
+      2 remote
+      3 hygro
+      4 guitar string
+      5 takepaper
+      6 coffee/clown
+      7 
+      8
+      9
+      10
+     */
     
     public GameObject(){  
     }
-
-    public void toString2(){
-	for(int i = 0; i < this.text.length; i++){
-	    System.out.println(this.text[i]);
-	}
+    
+    public String toString2(){
+	return "";
     }
 
-    public void toStringC(){
-	//System.out.println(this.commands[this.counter]);
+    public String toStringC(){
+	return "";
     }
 
-    public void checkMap(String command){
+    public String checkMap(String command){
+	return "";
     }
 
+    public void setStatus(int index, boolean b){
+	status[index] = b;
+    }
+
+    public boolean getStatus(int index){
+	return status[index];
+    }
     
     public void initializeHashMap(){
-	for(int i = 0; i < commands.length; i++){
-	    map1.put(this.commands[i], this.answers[i]);
-	}
     }
 }
