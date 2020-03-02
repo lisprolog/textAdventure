@@ -3,19 +3,12 @@ import java.util.HashMap;
 public class Printer extends GameObject{
 
     HashMap<String, String> map1 = new HashMap<String, String>();
-    
-    public Printer(){
-
-	if(status[1] && !status[5]){ //grabcable(Bed) without paper
-	    update = 3; //plugcable command
-	}
-	
-	initializeHashMap();
-    }
 
     private int update = 2;
-    private boolean cableKeep, cablePlugged, paperKeep, paperPlaced  = false;
+
     
+    private static boolean cableKeep, cablePlugged, paperKeep, paperPlaced  = false;
+
     String [] text = {"The printer is dusty."};
     String [] commands = {"pushbutton", "done", "plugcable", "placepaper"};
     String [] answers = {"Nothing happens.",
@@ -23,6 +16,27 @@ public class Printer extends GameObject{
 			 "You put a cable into the printer and a plug.",
 			 "You place paper into the printer."};
     
+    public Printer(){
+
+	if(status[1] && !status[5]){ //grabcable(Bed) without paper
+	    update = 3; //plugcable command
+	}
+
+	if(status[5] && !status[1]){ //no cable(Bed) with paper
+	    update = 3; //plugcable command
+	    commands[2] = "placepaper";
+	    commands[3] = "plugcable";
+	    answers[2]= "You place paper into the printer";
+	    answers[3]= "You put a cable into the printer and a plug.";
+	}
+
+	if(status[1] && status[5]){
+	    update = 4;
+	}
+	
+	initializeHashMap();
+    }
+   
     public String toString2(){
 	String result = "\033[34m" + text[0] + "\033[0m";
 	System.out.println(result);
@@ -49,16 +63,17 @@ public class Printer extends GameObject{
 	String result = "";
 
 	if(command.equals("plugcable") && status[1]){
-	    cablePlugged = true;
+	    setStatus(7,true);
 	}
 	    
 	if(command.equals("placepaper") && status[5]){
-	    paperPlaced = true;
+	    setStatus(8,true);
 	}
 	
 	if(command.equals("pushbutton")){
-	    if(cablePlugged && paperPlaced){
+	    if(getStatus(7) && getStatus(8)){
 		answers[0] = "The printer prints: Say <goodbye> before you leave.";
+		setStatus(9,true);
 	    }
 	}
 	
@@ -70,6 +85,10 @@ public class Printer extends GameObject{
 	    commands[3] = "plugcable";
 	    answers[2]= "You place paper into the printer";
 	    answers[3]= "You put a cable into the printer and a plug.";
+	}
+
+	if(status[1] && status[5]){
+	    update = 4;
 	}
 
 	initializeHashMap();

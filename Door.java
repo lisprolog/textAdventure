@@ -12,13 +12,13 @@ public class Door extends GameObject{
     }
     
     String [] text = {"The door is closed and has a door spy."};
-    String [] commands = {"open", "spy", "punch", "kick", "done", "unlock"};
+    String [] commands = {"open", "spy", "punch", "kick", "done", "goodbye"};
     String [] answers = {"You can not open the door. It's locked.",
 			 "You look out and see an old man walking the stairs.",
 			 "You punch at the door. Your knuckles hurt.",
 			 "You kick at the door. Nothing happens.",
 			 "You move back.",
-			 "You unlock the Door."};
+			 "You unlock the Door. The Game is finished. Congrats"};
 
     private int update = 5;
     
@@ -44,15 +44,14 @@ public class Door extends GameObject{
 
 	if(command.equals("drinkcoffee")){
 	    setStatus(6, true);
-	    //answers[1] = "You look out and see a clown walking the stairs.";
-	}
-	
-	if(command.equals("grabkey")){
-	    update++;
 	}
 
 	if(getStatus(6)){
 	    answers[1] = "You look out and see a clown walking the stairs.";
+	}
+
+	if(getStatus(9)){
+	    update = 6;
 	}
 
 	initializeHashMap();
@@ -69,7 +68,7 @@ public class Door extends GameObject{
 	    answers[1] = "You look out and see a clown walking the stairs.";
 	}
 	
-	for(int i = 0; i < commands.length; i++){
+	for(int i = 0; i < update; i++){
 	    map1.put(commands[i], answers[i]);
 	}
     }

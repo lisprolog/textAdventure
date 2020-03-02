@@ -65,7 +65,7 @@ public class TextAdventure{
 			command = sc.next();
 			if(command.equals("done")){
 			    run2 = false;
-			}else if (command.equals("quit")){
+			}else if (command.equals("quit") | command.equals("goodbye") ){
 			    run2 = false;
 			    run = false;
 			}else{

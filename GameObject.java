@@ -22,8 +22,8 @@ public class GameObject{
       4 guitar string
       5 takepaper
       6 coffee/clown
-      7 
-      8
+      7 cable plugged
+      8 paper placed
       9
       10
      */
