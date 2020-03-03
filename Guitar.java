@@ -13,7 +13,8 @@ public class Guitar extends GameObject{
     String [] answers = {"A spider runs away as you lift the guitar.",
 			 "A string is missing, you cannot play the guitar.",
 			 "You move back.",
-			 "You put the string on the guitar. Then you play a nice song."};
+			 "You put the string on the guitar.",
+			 "You play <Stairway to Heaven>."};
 
     HashMap<String, String> map1 = new HashMap<String, String>();
 
@@ -36,12 +37,13 @@ public class Guitar extends GameObject{
 	String result = "";
 	System.out.println("\033[31;1m" + map1.get(command) + "\033[0m");
 	result = "\033[31;1m" + map1.get(command) + "\033[0m";
-	if(command.equals("lookunder")){
-	    update = 5;
+	
+	if(getStatus(4)){
+	    update = 5;//guitar string on
 	}
-	if(status[4]){
-	    update = 4;//guitar string on
-	}
+
+	initializeHashMap();
+	
 	return result;
     }
 

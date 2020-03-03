@@ -43,9 +43,11 @@ public class Bookshelf extends GameObject{
 	if(command.equals("checkdirectory")){
 	    update++;
 	}
+
 	if(command.equals("takepaper")){
 	    setStatus(5, true);
 	}
+
 	if(command.equals("guitarstrings")){
 	    setStatus(4,true);
 	}

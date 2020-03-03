@@ -24,7 +24,7 @@ public class GameObject{
       6 coffee/clown
       7 cable plugged
       8 paper placed
-      9
+      9 paper and cable placed
       10
      */
     

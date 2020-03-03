@@ -18,11 +18,11 @@ public class Printer extends GameObject{
     
     public Printer(){
 
-	if(status[1] && !status[5]){ //grabcable(Bed) without paper
+	if(getStatus(1) && !getStatus(5)){ //grabcable(Bed) without paper
 	    update = 3; //plugcable command
 	}
 
-	if(status[5] && !status[1]){ //no cable(Bed) with paper
+	if(getStatus(5) && !getStatus(1)){ //no cable(Bed) with paper
 	    update = 3; //plugcable command
 	    commands[2] = "placepaper";
 	    commands[3] = "plugcable";
@@ -30,7 +30,7 @@ public class Printer extends GameObject{
 	    answers[3]= "You put a cable into the printer and a plug.";
 	}
 
-	if(status[1] && status[5]){
+	if(getStatus(1) && getStatus(5)){
 	    update = 4;
 	}
 	
@@ -62,11 +62,11 @@ public class Printer extends GameObject{
 	
 	String result = "";
 
-	if(command.equals("plugcable") && status[1]){
+	if(command.equals("plugcable") && getStatus(1)){
 	    setStatus(7,true);
 	}
 	    
-	if(command.equals("placepaper") && status[5]){
+	if(command.equals("placepaper") && getStatus(5)){
 	    setStatus(8,true);
 	}
 	
@@ -77,9 +77,9 @@ public class Printer extends GameObject{
 	    }
 	}
 	
-	if(status[1] && !status[5]){ //grabcable(Bed)
+	if(getStatus(1) && !getStatus(5)){ //grabcable(Bed)
 	    update = 3; //plugcable command
-	}else if(status[5] && !status[1]){ //in case he grabs the papers before cable
+	}else if(getStatus(5) && !getStatus(1)){ //in case he grabs the papers before cable
 	    update = 3;
 	    commands[2] = "placepaper";
 	    commands[3] = "plugcable";
@@ -87,7 +87,7 @@ public class Printer extends GameObject{
 	    answers[3]= "You put a cable into the printer and a plug.";
 	}
 
-	if(status[1] && status[5]){
+	if(getStatus(5) && getStatus(5)){
 	    update = 4;
 	}
 
