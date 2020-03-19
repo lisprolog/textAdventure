@@ -10,10 +10,10 @@ public class Table extends GameObject{
 
     private int update = 8;
     
-    String [] text = {"The table is full of notes, a calender, glas bottles, a computer, a smartphone, a plant and a dish with chinese food."};
-    String [] commands = {"notes", "calendar", "bottle", "laptop", "smartphone", "plant", "chinese", "done"};
-    String [] answers = {"You cannot read the notes.",
-			 "The calendar says today is Friday the 13th.",
+    String [] text = {"The table is filled with: a note, a calender, glas bottles, a computer, a smartphone, a plant and a dish with chinese food."};
+    String [] commands = {"note", "calendar", "bottle", "laptop", "smartphone", "plant", "chinese", "done"};
+    String [] answers = {"The note says: <Buy cake>.",
+			 "The calendar says <Happy Birthday to you!>.",
 			 "One bottle is filled with a drink. The label says <Mate>.",
 			 "The laptop is not plugged in.",
 			 "The smartphone is turned off.",
