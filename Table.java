@@ -12,8 +12,8 @@ public class Table extends GameObject{
     
     String [] text = {"The table is filled with: a note, a calender, glas bottles, a computer, a smartphone, a plant and a dish with chinese food."};
     String [] commands = {"note", "calendar", "bottle", "laptop", "smartphone", "plant", "chinese", "done"};
-    String [] answers = {"The note says: <Buy cake>.",
-			 "The calendar says <Happy Birthday to you!>.",
+    String [] answers = {"The note says: <The boy has waited so long\nto play for his loved one a song\nonce he was close\ngave her a rose\nand asked her to sing along.>.",
+			 "The calendar says <Valentine>.",
 			 "One bottle is filled with a drink. The label says <Mate>.",
 			 "The laptop is not plugged in.",
 			 "The smartphone is turned off.",
